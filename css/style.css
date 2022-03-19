@@ -3,6 +3,12 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background: #aaaaaa10;;
+}
+:root{
+    --secondary-bg: #16ADDD;
+}
 
 .header{
     background-color: #16ADDD;
@@ -41,8 +47,65 @@
     padding: 20px;
 }
 .pizza-cont{
-    box-shadow: 0 0 80px 20px #aaaaaa50;
+    /* box-shadow: 0 0 80px 20px #aaaaaa50; */
+    background-color: white;
 }
 .pizza-order{
 
 }
+.contact-container{
+    display: flex;
+    flex: 1 1;
+  }
+  
+  .w-48{
+    width: 48%;
+    padding-right: 40px;
+  }
+  
+  .feedback-form h4, .social-media h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  
+  .form{
+    padding-right: 20px;
+  }
+  
+  .input-holder{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .input-holder label{
+    font-size: 16px;
+    color: var(--color);
+    margin-bottom: 10px;
+  }
+  
+  .input-holder input, .input-holder textarea{
+    font-size: 16px;
+    color: var(--color);
+    border: 0;
+    background-color: #aaaaaa20;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    outline: none;
+    max-width: 100%;
+  }
+  
+  .send-feedback-btn,.make-delivery-btn{
+    font-size: 16px;
+    color: var(--color);
+    border: 0;
+    /* background-color: #aaaaaa20; */
+    background-color: var(--secondary-bg);
+    padding: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    cursor: pointer;
+  }

@@ -160,66 +160,72 @@
                     <button class="btn btn-primary">Place Your Order</button>
                 </form>
             </div>
-            <div class="container">
+            <div class="container text-center">
                 <div>
                     <h4>Order Summary</h4>
-                    <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th scope="">Flavour</th>
-                            <th scope="">Toppings</th>
-                            <th scope="">Crust</th>
-                            <th scope="">size</th>
-                            <th scope="">Quantity</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>meat Deluxe</td>
-                            <td>Tomato@Ksh.80</td>
-                            <td>Thin crust@ksh.150</td>
-                            <td>Regular</td>
-                            <td>2</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                    <div class="summary-items">
+
+                    </div>
                       <button class="btn btn-primary">Place the Order</button>
                 </div>
             </div>
-            <div class="container">
-                <form>
-                    <h4>Enter Your Location Details</h4>
-                    <div class="input">
-                        <input type="text" placeholder="Enter your Name">
-                    </div>
-                    <div class="input">
-                        <input type="text" placeholder="Enter your phone Number">
-                    </div>
-                   <div class="input">
-                    <input type="text" placeholder="your location">
-                   </div>
-                    <button>Make Delivery</button>
-                </form>
-            </div>
-            <div class="container">
-                <div class="message">
-                    <form >
-                        <H4>Feedback Section</H4>
-                        <label for="comments">Leave your Feedback</label>
-                        <div class="textarea">
-                            <textarea name="comments" id="" cols="30" rows="5" placeholder="Write your comments here..."></textarea>
-                        </div>
+           <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Delivery </h3>
+                    <form>
+                        <h4>Enter Your Location Details</h4>
+                        <div class="input-holder">
+                            <label for="name"> Name</label>
+                            <input type="text" name="name" id="name" placeholder="Your Name">
+                          </div>
+                
+                          <div class="input-holder">
+                            <label for="phone-number"> Phone Number</label>
+                            <input type="number" name="Number" id="phone-number" placeholder="Your Phone Number">
+                          </div>
+                          <div class="input-holder">
+                            <label for="location"> Location</label>
+                            <input type="text" name="location" id="location" placeholder="Your Location">
+                          </div>
+                        <button class="make-delivery-btn">Make Delivery</button>
                     </form>
                 </div>
-            </div>
+                <div class="w-48 feedback-form col-md-6">
+                    <h4>Give us your Feedback</h4>
+                    <form method="post" class="form">
+            
+                      <div class="input-holder">
+                        <label for="name"> Name</label>
+                        <input type="text" name="name" id="name" placeholder="Your Name">
+                      </div>
+            
+                      <div class="input-holder">
+                        <label for="email"> Email</label>
+                        <input type="email" name="email" id="email" placeholder="Your Email">
+                      </div>
+            
+                      <div class="input-holder">
+                        <label for="feedback"> Message</label>
+                        <textarea name="feedback" id="feedback" rows="5" placeholder="Your Feedback"></textarea>
+                      </div>
+            
+                      <button class="send-feedback-btn">
+                        Send Feedback
+                      </button>
+                    </form>
+                  </div>
+               </div>
+           </div>
         </main>
         <footer class="container">
+            <h4 class="text-center">Get In Touch</h4>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <p>Location:</p>
                     <p>We are located along Ngong Road next to </p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <p>Physical Address:</p>
                     <p>P.o box 300790-001</p>
                     <p>Nairobi,Kenya</p>

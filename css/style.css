@@ -2,6 +2,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-padding-top: 80px;
+    scroll-behavior: smooth;
 }
 body{
     background: #aaaaaa10;;
@@ -12,6 +14,7 @@ body{
 
 .header{
     background-color: #16ADDD;
+    height: 70px;
 }
 .hero{
     /* background: url(../images/hero1.jpg); */
@@ -47,6 +50,12 @@ body{
     padding: 20px;
     background-color: white;
 }
+
+.pizza-card{
+    background-color: white;
+    box-shadow: 0 0 20px 0 #aaaaaa50;
+}
+
 .pizza-cont{
     /* box-shadow: 0 0 80px 20px #aaaaaa50; */
     background-color: white;
@@ -128,3 +137,21 @@ body{
   .img-pizza{
       color: white;
   }
+
+  .pizza-img{
+      width: 200px;
+      overflow: hidden;
+  }
+
+  .pizza-img img{
+      width: 100%;
+  }
+
+ @media  screen and (max-width: 768px) {
+    th{
+        min-width: 200px;
+    }
+    th:nth-child(1){
+          min-width: auto;
+    }
+ }

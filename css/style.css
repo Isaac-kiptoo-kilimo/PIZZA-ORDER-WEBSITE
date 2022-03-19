@@ -45,6 +45,7 @@ body{
 .card2{
     box-shadow: 0 0 20px 0 #aaaaaa50;
     padding: 20px;
+    background-color: white;
 }
 .pizza-cont{
     /* box-shadow: 0 0 80px 20px #aaaaaa50; */
@@ -97,15 +98,30 @@ body{
     outline: none;
     max-width: 100%;
   }
+  span{
+      color: #00D660;
+  }
   
   .send-feedback-btn,.make-delivery-btn{
     font-size: 16px;
-    color: var(--color);
     border: 0;
     /* background-color: #aaaaaa20; */
     background-color: var(--secondary-bg);
+    color: white;
     padding: 10px;
     margin-bottom: 10px;
     outline: none;
     cursor: pointer;
+  }
+  footer{
+      background-color:  #333B50;
+  }
+  .content-lower{
+      background-color: white;
+  }
+  .contact-head{
+      color: #00D660;
+  }
+  .btn-prim{
+      background-color: #16ADDD;
   }

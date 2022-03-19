@@ -3,12 +3,43 @@
     margin: 0;
     padding: 0;
 }
+
 .header{
-    /* background: url(../images/pizza1.png); */
-    background-color: #1d1d29;
+    background-color: #16ADDD;
+}
+.hero{
+    /* background: url(../images/hero1.jpg); */
+    /* /* background-color:  #0a192f;* */
+     background: linear-gradient(110deg, white 51%, #F6B400 49%); 
     height: 100vh;
     width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.card{
-    background-color: orange;
+.button-hero{
+    height: 100%;
+    /* background-color: orange; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-hero{
+    background-color: #16ADDD;
+   
+}
+.card1,.card3{
+    background-color:#16ADDD;
+    box-shadow: 0 0 20px 0 #aaaaaa50;
+    color: white;
+    padding: 20px;
+}
+.card2{
+    box-shadow: 0 0 20px 0 #aaaaaa50;
+    padding: 20px;
+}
+.pizza-cont{
+    box-shadow: 0 0 80px 20px #aaaaaa50;
 }

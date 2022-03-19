@@ -10,48 +10,55 @@
 </head>
 <body>
     <div class="container-fluid">
-        <header class="header py-4 text-white">
-            <div class="container text-white">
-                <div class="row">
+        <header class="py-4 ">
+            <div class="container-fluid ">
+                <div class="row header p-4">
                     <div class="col-md-4">
                         <h4>VOTRE PIZZAREA HUT</h4>
                     </div>
                     <div class="col-md-8 ">
                         <ul class="d-flex">
-                            <li class="mx-4 list-unstyled"><a class="text-decoration-none text-white" href="#">Home</a></li>
-                            <li class="mx-4 list-unstyled"><a class="text-decoration-none text-white" href="#">Pizzas</a></li>
-                            <li class="mx-4 list-unstyled"><a class="text-decoration-none text-white" href="#">Orders</a></li>
-                            <li class="mx-4 list-unstyled"><a class="text-decoration-none text-white" href="#">Contact us</a></li>
-                            <li class="mx-4 list-unstyled"><a class="text-decoration-none text-white" href="#">CheckOut</a></li>
+                            <li class="mx-4 list-unstyled"><a class="text-decoration-none text-dark" href="#">Home</a></li>
+                            <li class="mx-4 list-unstyled"><a class="text-decoration-none text-dark" href="#">Pizzas</a></li>
+                            <li class="mx-4 list-unstyled"><a class="text-decoration-none text-dark" href="#">Orders</a></li>
+                            <li class="mx-4 list-unstyled"><a class="text-decoration-none text-dark" href="#">Contact us</a></li>
+                            <li class="mx-4 list-unstyled"><a class="text-decoration-none text-dark" href="#">CheckOut</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
+           <div class=" text-center hero">
             <div class="row">
-                <div class="hero">
+                <div class="col-md-6">
                     <p> VOTRE PIZZAREA HUT</p>
                     <h2>HAVE THE REAL TASTE OF PIZZA</h2>
                     <p>Tasty ,Flavored,Chewy, Moist and Sharp. </p>  
-                    <button class="btn btn-primary">Make Your Order</button>             
+                   <div class="button-hero">
+                    <button class="btn btn-hero">Make Your Order</button> 
+                   </div>            
+                </div>
+                <div class="col-md-6">
+                    <img src="./images/hero2.png" alt="" width="100%">
                 </div>
             </div>
+           </div>
         </header>
         <main>
-            <div class="container">
+            <div class="container my-3">
                 <h2 class="text-center">Our Services</h2>
-                <div class="row">
+                <div class="row my-4">
                    <div class="col-md-4">
-                        <div class="card">
+                        <div class="card1">
                             <div class="card-body">
+                                <img src="./images/pizza1.png" width="50px" alt="pizza">
                                 <h5 class="card-title">Quality Pizzas</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Reach Us</h6>
                                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                <img src="" alt="pizza">
                             </div>
                         </div>
                    </div>
                    <div class="col-md-4">
-                        <div class="card">
+                        <div class="card2">
                             <div class="card-body">
                                 <h5 class="card-title">Fast Delivery</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Reach Us</h6>
@@ -61,25 +68,23 @@
                         </div>
                    </div>
                    <div class="col-md-4">
-                        <div class="card">
+                        <div class="card3">
                             <div class="card-body">
                                 <h5 class="card-title">100% Satisfaction</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Social Media</h6>
                                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                    <i class="fas fa-twitter"></i>
-                                    <i class="fas fa-facebook"></i>
-                                    <i class="fas fa-phone"></i>
-                                    <i class="fas fa-email"></i>
-                                    <i class="fas fa-instagram"></i>
                             </div>
                         </div>
                   </div>
                 </div>
             </div>
-            <div class="container">
+            <div class="container my-5">
                 <h3 class="text-center">THE MOST ORDERED PIZZAS</h3>
                 <div class="row">
-                    <div class="col-md-3 bg-success mx-4">
+                    <div class="col-md-1">
+
+                    </div>
+                    <div class="col-md-3 mx-4 pizza-cont">
                         <img src="" alt="home pizza">
                         <h6>Home pizza</h6>
                         <p>Topping</p>
@@ -87,7 +92,7 @@
                         <p>ksh 1300</p>
                         <button class=" btn btn-primary">Order Now !</button>
                     </div>
-                    <div class="col-md-3 mx-4 bg-success">
+                    <div class="col-md-3 mx-4 pizza-cont">
                         <img src="" alt="home pizza">
                         <h6>Home pizza</h6>
                         <p>Topping</p>
@@ -95,7 +100,7 @@
                         <p>ksh 1300</p>
                         <button class=" btn btn-primary">Order Now !</button>
                     </div>
-                    <div class="col-md-3 mx-4 bg-success">
+                    <div class="col-md-3 mx-4 pizza-cont">
                         <img src="" alt="home pizza">
                         <h6>Home pizza</h6>
                         <p>Topping</p>
@@ -153,16 +158,16 @@
                 </form>
             </div>
             <div class="container">
-                <div class="">
+                <div>
                     <h4>Order Summary</h4>
                     <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th scope="col">Flavour</th>
-                            <th scope="col">Toppings</th>
-                            <th scope="col">Crust</th>
-                            <th scope="col">size</th>
-                            <th scope="col">Quantity</th>
+                            <th scope="">Flavour</th>
+                            <th scope="">Toppings</th>
+                            <th scope="">Crust</th>
+                            <th scope="">size</th>
+                            <th scope="">Quantity</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -193,17 +198,19 @@
                     <button>Make Delivery</button>
                 </form>
             </div>
-            <div class="message">
-                <form >
-                    <H4>Feedback Section</H4>
-                    <label for="comments">Leave your Feedback</label>
-                    <div class="textarea">
-                        <textarea name="comments" id="" cols="30" rows="5" placeholder="Write your comments here..."></textarea>
-                    </div>
-                </form>
+            <div class="container">
+                <div class="message">
+                    <form >
+                        <H4>Feedback Section</H4>
+                        <label for="comments">Leave your Feedback</label>
+                        <div class="textarea">
+                            <textarea name="comments" id="" cols="30" rows="5" placeholder="Write your comments here..."></textarea>
+                        </div>
+                    </form>
+                </div>
             </div>
         </main>
-        <footer>
+        <footer class="container">
             <div class="row">
                 <div class="col-md-3">
                     <p>Location:</p>

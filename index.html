@@ -103,118 +103,60 @@
             <h3 class="text-center text-warning mb-3 mb-md-5">THE MOST ORDERED PIZZAS</h3>
             <div class="row" id="pizzas-holder">
 
-
-                <div class="col-md-4 px-1 px-md-3 mb-3">
-                    <div class="pizza-card card border-0">
-                        <img src="./images/ordered-pizza.png" class="card-img-top" width="250px" alt="home pizza">
-                        <div class="card-body">
-                            <h6>Home pizza</h6>
-                            <p>Topping:</p>
-                            <p>Crust:</p>
-                            <p>ksh <strong>1200</strong> </p>
-                            <button class=" btn btn-primary btn-large">Order Now !</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 px-1 px-md-3 mb-3">
-                    <div class="pizza-card card border-0">
-                        <img src="./images/ordered-pizza.png" class="card-img-top" width="250px" alt="home pizza">
-                        <div class="card-body">
-                            <h6>Home pizza</h6>
-                            <p>Topping:</p>
-                            <p>Crust:</p>
-                            <p>ksh <strong>1200</strong> </p>
-                            <button class=" btn btn-primary btn-large">Order Now !</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 px-1 px-md-3 mb-3">
-                    <div class="pizza-card card border-0">
-                        <img src="./images/ordered-pizza.png" class="card-img-top" width="250px" alt="home pizza">
-                        <div class="card-body">
-                            <h6>Home pizza</h6>
-                            <p>Topping:</p>
-                            <p>Crust:</p>
-                            <p>ksh <strong>1200</strong> </p>
-                            <button class=" btn btn-primary btn-large">Order Now !</button>
-                        </div>
-                    </div>
-                </div>
-
-
+                <!-- Here we render pizzas -->
 
             </div>
         </div>
-        <div class="container bg-white mt-5">
+        <div class="container bg-white mt-5 py-5 mb-4">
             <div class="pizza-order" id="pizza-form">
                 <div class="head mb-5">
                     <h2 class="text-center"> Make Your Pizza Order</h2>
                 </div>
-                <form class="form mb-5">
+                <form class="form mb-5" id="order-form">
                     <div class="row form-group">
                         <div class="col-md-6 mb-3">
                             <label for="pizza-type">Get your preferred pizza flavour</label>
-                            <select class="form-select input-lg py-2 px-2 shadow-none mt-2" id="pizza-type">
-                                <option selected>Meat Deluxe</option>
-                                <option value="1">Chicken Hawaiian</option>
-                                <option value="2">BBO Steak</option>
-                                <option value="3">Chicken Macon BBQ</option>
-                                <option value="3">Chicken & Mushroom</option>
-                                <option value="3">Spicy Boerewors</option>
-                                <option value="3">Beef pepporoni </option>
+                            <select data-name-pizza="something" class="form-select input-lg py-2 px-2 shadow-none mt-2"
+                                id="pizza-type" onchange="return listenForTypeChange(this)">
+
                             </select>
                         </div>
 
                         <div class="col-md-6 mb-3">
                             <label for="">Choose you Preffered Toppings</label>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-check mt-2">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                                            Pepperoni
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-check mt-2">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                                            Bacon
-                                        </label>
-                                    </div>
-                                </div>
+                            <div class="row" id="pizza-toppings">
+
+
                             </div>
                         </div>
 
                         <div class="col-md-6 mb-3">
                             <label for="">Select your satisfactory Size</label>
                             <select class="form-select input-lg py-2 px-2 shadow-none mt-2"
-                                aria-label="Default select example">
-                                <option selected>Select</option>
+                                onchange="return listenForSizeChange(this)" id="pizza-size">
+                                <!-- <option selected>Select</option>
                                 <option value="1">Regular</option>
                                 <option value="2">Medium</option>
-                                <option value="3">Large</option>
+                                <option value="3">Large</option> -->
                             </select>
                         </div>
 
                         <div class="col-md-6 mb-3">
                             <label for="">Select your favorite crust</label>
                             <select class="form-select input-lg py-2 px-2 shadow-none mt-2"
-                                aria-label="Default select example">
-                                <option selected>Select</option>
+                                onchange="return listenForCrustChange(this)" id="pizza-crust">
+                                <!-- <option selected>Select</option>
                                 <option value="4">Thin Crust @Ksh.150</option>
                                 <option value="1">Thick Crust @Ksh.250</option>
                                 <option value="2">Flat Bread @Ksh.280</option>
-                                <option value="3">Custom Crust @Ksh.300</option>
+                                <option value="3">Custom Crust @Ksh.300</option> -->
                             </select>
                         </div>
 
                         <div class="col-md-6 mb-3">
-                            <label for="">Choose number of Pizzas size</label>
-                            <input type="text" class="form-control p-2 shadow-none mt-2 inputt-lg">
+                            <label for="">Quantity</label>
+                            <input type="number" value="1" id="pizza-quantity"
+                                class="form-control p-2 shadow-none mt-2 inputt-lg">
                         </div>
 
                         <div class="col-md-12 mb-3">
@@ -233,28 +175,31 @@
 
     </main>
 
-    <footer class="container-fluid text-white pt-5 pb-3">
-        <h3 class="text-center contact-head m-3">Get In Touch</h3>
-        <div class="row">
-            <div class="col-md-4">
-                <h4>Location:</h4>
-                <p>We are located along Ngong Road next to </p>
+    <footer class="text-white pt-5 pb-3">
+        <div class="container">
+            <h3 class="text-center contact-head m-3">Get In Touch</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Location:</h4>
+                    <p>We are located along Ngong Road next to </p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Physical Address:</h4>
+                    <p>P.o box 300790-001</p>
+                    <p>Nairobi,Kenya</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Social</h5>
+                    <i class=" fab fa-facebook"></i>
+                    <i class="mx-4 fas fa-phone"></i>
+                    <i class="mx-4 fab fa-twitter"></i>
+                    <i class="m-4 fab fa-instagram"></i>
+                    <i class="m-4 fab fa-linkedIn"></i>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h4>Physical Address:</h4>
-                <p>P.o box 300790-001</p>
-                <p>Nairobi,Kenya</p>
-            </div>
-            <div class="col-md-4">
-                <h5>Social</h5>
-                <i class=" fab fa-facebook"></i>
-                <i class="mx-4 fas fa-phone"></i>
-                <i class="mx-4 fab fa-twitter"></i>
-                <i class="m-4 fab fa-instagram"></i>
-                <i class="m-4 fab fa-linkedIn"></i>
-            </div>
+            <p class="mt-4 text-center">@2022 &copy; copyright:votre pizzarea hut;designed and developd by isaac kilimo
+            </p>
         </div>
-        <p>@2022 &copy; copyright:votre pizzarea hut;designed and developd by isaac kilimo</p>
     </footer>
 
 
@@ -264,8 +209,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="./js/pizzas.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/selector.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/orderform.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

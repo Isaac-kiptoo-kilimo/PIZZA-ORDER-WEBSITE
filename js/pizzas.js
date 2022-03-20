@@ -180,7 +180,6 @@ class Cart {
         const storage = window.localStorage;
         let cart = JSON.parse(storage.getItem('cart'));
         this.pizzasincart = cart.pizzasincart;
-        // console.log('cart', cart)
         // return cart.pizzasincart;
         return this
     }

@@ -1,3 +1,7 @@
+const randomIndex = (max) => {
+    return Math.floor(Math.random() * max);
+}
+
 class Pizza {
     constructor(name, crust, toppings, pizzasize, image = 'https://www.picng.com/upload/pizza/png_pizza_15268.png') {
         this.name = name;
@@ -9,6 +13,7 @@ class Pizza {
     }
 
     calculatePrice() {
+        // console.log(this)
         let totalPrice = this.price + this.crust.price;
         this.toppings.forEach(function (topping) {
             totalPrice += topping.price;
@@ -23,6 +28,7 @@ class Crust {
         this.price = price;
     }
 }
+
 Crust.prototype.getPrice = function () {
     return `Ksh ${this.price}`;
 };
@@ -50,16 +56,209 @@ class PizzaSize {
 }
 
 class SinglePizzaInCart {
-    constructor(id, pizza, quantity = 1) {
-        this.id = id;
+    constructor(pizza, quantity = 1) {
+        this.id = null;
         this.pizza = pizza;
         this.quantity = quantity;
     }
 
-    getTotalPrice() {
-        return this.pizza.calculatePrice() * this.quantity;
+    setId(id) {
+        this.id = id;
     }
+
+    getTotalPrice() {
+        // console.log(this.pizza)
+        const _piz = new Pizza(this.pizza.name, this.pizza.crust, this.pizza.toppings, { price: this.pizza.price, size: this.pizza.size }, this.pizza.image);
+        return _piz.calculatePrice() * this.quantity;
+    }
+
 }
+
+class Cart {
+
+    constructor() {
+        this.pizzasincart = [];
+        this.id = null;
+        this.name = null;
+        this.phoneNumber = null;
+        this.address = null;
+        this.delivered = false
+        this.delivery_cost = null;
+        this.total = null;
+        this.date = null;
+    }
+
+    initStore() {
+        const storage = window.localStorage;
+        if (storage.getItem('cart')) {
+            return;
+        }
+        else {
+            storage.setItem('cart', JSON.stringify(this));
+        }
+
+    }
+
+    setID(id) {
+        this.id = id;
+    }
+    // crate setters
+    setName(name) {
+        this.name = name;
+    }
+
+    setPhoneNumber(phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    setAddress(address) {
+        this.address = address;
+    }
+
+    setDelivered() {
+        const status = [false, true]
+        this.delivered = status[randomIndex(status.length - 1)];
+    }
+
+    setDeliveryCost() {
+        const costs = [200, 300, 400, 500, 600, 700, 800, 900, 1000];
+        this.delivery_cost = costs[randomIndex(costs.length - 1)];
+    }
+
+    setCartTotal() {
+        this.total = this.getTotalPrice();
+    }
+
+    setDate() {
+        const date = new Date();
+        this.date = date.toLocaleDateString();
+    }
+
+    addPizza(singlepizzaincart) {
+        this.initStore();
+        const storage = window.localStorage;
+        const cart = JSON.parse(storage.getItem('cart'));
+        let id = 0;
+        const lastPizzaInCart = cart.pizzasincart[cart.pizzasincart.length - 1];
+        if (cart.pizzasincart.length > 0) {
+            id = lastPizzaInCart.id + 1;
+        }
+        else {
+            id = 1
+        }
+
+        singlepizzaincart.setId(id);
+
+        cart.pizzasincart.push(singlepizzaincart);
+        storage.setItem('cart', JSON.stringify(cart));
+    }
+
+    deletePizzaInstore(id) {
+        let cart = JSON.parse(storage.getItem('cart'));
+        cart.pizzasincart = cart.pizzasincart.filter(pizza => pizza.id !== id);
+        storage.setItem('cart', JSON.stringify(cart));
+    }
+
+    getTotalPrice() {
+        const storage = window.localStorage;
+        let total = 0;
+        let cart = JSON.parse(storage.getItem('cart'))
+        cart.pizzasincart.forEach(function (pizza_) {
+            const our_pizza = new SinglePizzaInCart(pizza_.pizza, pizza_.quantity);
+            our_pizza.setId(pizza_.id);
+            total += our_pizza.getTotalPrice();
+        });
+        return total;
+    }
+
+    clearCart() {
+        const storage = window.localStorage;
+        storage.removeItem('cart');
+    }
+
+    getCart() {
+        const storage = window.localStorage;
+        let cart = JSON.parse(storage.getItem('cart'));
+        this.pizzasincart = cart.pizzasincart;
+        // console.log('cart', cart)
+        // return cart.pizzasincart;
+        return this
+    }
+
+}
+
+class Order {
+
+    constructor() {
+        this.orders = [];
+    }
+
+    initStore() {
+        const storage = window.localStorage;
+        if (storage.getItem('orders')) {
+            return;
+        }
+        else {
+            storage.setItem('orders', JSON.stringify(this));
+        }
+
+    }
+
+    addOrder(cartDetails) {
+        this.initStore();
+        const storage = window.localStorage;
+        const orders = JSON.parse(storage.getItem('orders'));
+        console.log(orders.orders.length)
+        let id = 0;
+        const lastOrder = orders.orders[orders.orders.length - 1];
+        if (orders.orders.length > 0) {
+            id = lastOrder.id + 1;
+        }
+        else {
+            id = 1
+        }
+
+        cartDetails.setID(id);
+        cartDetails.setName(name_.value)
+        cartDetails.setPhoneNumber(phone.value)
+        cartDetails.setAddress(address.value)
+        cartDetails.setDelivered()
+        cartDetails.setDeliveryCost()
+        cartDetails.setCartTotal()
+        cartDetails.setDate()
+
+        orders.orders.push(cartDetails);
+        storage.setItem('orders', JSON.stringify(orders));
+    }
+
+    deleteOrderInstore(id) {
+        let orders = JSON.parse(storage.getItem('orders'));
+        orders = orders.filter(order => order.id !== id);
+        storage.setItem('orders', JSON.stringify(orders));
+    }
+
+    // getTotalPrice() {
+    //     const storage = window.localStorage;
+    //     let total = 0;
+    //     let orders = JSON.parse(storage.getItem('orders'))
+    //     orders.forEach(function (order) {
+    //         const our_pizza = new SinglePizzaInCart(pizza_.pizza, pizza_.quantity);
+    //         our_pizza.setId(pizza_.id);
+    //         total += our_pizza.getTotalPrice();
+    //     });
+    //     return total;
+    // }
+
+    getOrders() {
+        const storage = window.localStorage;
+        let orders = JSON.parse(storage.getItem('orders'));
+
+        this.orders = orders.orders
+        return this
+    }
+
+}
+
 
 
 const pizzaToppings = [
@@ -98,6 +297,21 @@ const pizzas = [
     new Pizza('Spicy Boerewors', pizzaCrusts[2], pizzaToppings.slice(4, 9), pizzaSizes[1], 'https://www.freeiconspng.com/uploads/pizza-png-33.png'),
     new Pizza('Beef pepporoni', pizzaCrusts[1], pizzaToppings.slice(2, 5), pizzaSizes[2], 'https://www.picng.com/upload/pizza/png_pizza_15278.png'),
 ]
+
+// Initialize pizza order
+let pizzaOrder = new Pizza();
+
+// By default, set the toppings to be an empty array
+pizzaOrder.toppings = [];
+
+// Initialize cart
+const cart = new Cart();
+// Initializing the store
+cart.initStore();
+
+const order = new Order();
+// Initializing the orders store
+order.initStore();
 
 
 

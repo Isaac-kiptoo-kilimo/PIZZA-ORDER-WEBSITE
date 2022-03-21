@@ -14,6 +14,6 @@
 
 // feedback_btn.style.backgroundColor="green"
 
-addEventListener('submit',(e)=>{
+feedback_form.addEventListener('submit',(e)=>{
     alert('you message has been received.Thank you for contacting us.')
 })

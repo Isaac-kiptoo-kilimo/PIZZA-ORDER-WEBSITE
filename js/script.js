@@ -280,3 +280,5 @@ renderTopingInputs();
 renderTableRows();
 renderCheckoutTotal();
 renderOrders();
+
+

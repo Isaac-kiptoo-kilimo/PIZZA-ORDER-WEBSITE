@@ -19,3 +19,5 @@ let checkout_form = document.getElementById('checkout-form');
 let name_ = document.getElementById('name');
 let phone = document.getElementById('phone');
 let address = document.getElementById('location');
+
+let feedback_form=document.querySelector('#feedback-form')

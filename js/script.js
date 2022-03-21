@@ -2,8 +2,8 @@ const toppingInput = (topping) => {
     const topping_ = `
     <div class="col-md-3">
         <div class="form-check mt-2">
-            <input class="form-check-input" type="checkbox" onchange="return listenForToppingsChange(this)" data-name="${topping.name}">
-            <label class="form-check-label" for="defaultCheck1">
+            <input class="form-check-input" id="check-${topping.name}" type="checkbox" onchange="return listenForToppingsChange(this)" data-name="${topping.name}">
+            <label class="form-check-label" for="check-${topping.name}">
                 ${topping.name}
             </label>
         </div>

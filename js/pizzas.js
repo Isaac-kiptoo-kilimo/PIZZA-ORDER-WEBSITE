@@ -207,7 +207,6 @@ class Order {
         this.initStore();
         const storage = window.localStorage;
         const orders = JSON.parse(storage.getItem('orders'));
-        console.log(orders.orders.length)
         let id = 0;
         const lastOrder = orders.orders[orders.orders.length - 1];
         if (orders.orders.length > 0) {
@@ -216,7 +215,7 @@ class Order {
         else {
             id = 1
         }
-
+// appear in the card class
         cartDetails.setID(id);
         cartDetails.setName(name_.value)
         cartDetails.setPhoneNumber(phone.value)
@@ -236,17 +235,6 @@ class Order {
         storage.setItem('orders', JSON.stringify(orders));
     }
 
-    // getTotalPrice() {
-    //     const storage = window.localStorage;
-    //     let total = 0;
-    //     let orders = JSON.parse(storage.getItem('orders'))
-    //     orders.forEach(function (order) {
-    //         const our_pizza = new SinglePizzaInCart(pizza_.pizza, pizza_.quantity);
-    //         our_pizza.setId(pizza_.id);
-    //         total += our_pizza.getTotalPrice();
-    //     });
-    //     return total;
-    // }
 
     getOrders() {
         const storage = window.localStorage;

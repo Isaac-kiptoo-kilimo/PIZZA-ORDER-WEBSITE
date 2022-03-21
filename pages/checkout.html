@@ -25,7 +25,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" >
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="./../index.html">Home</a>
                     </li>
@@ -51,7 +51,7 @@
             <i class="fas fa-shopping-cart"></i> Your Cart
         </h3>
         <div class="table-responsive">
-            <table class="table table-stripped">
+            <table class="table table-bordered table-striped table-hover">
                 <thead class="table-head">
                     <tr>
                         <th>ID</th>
@@ -80,22 +80,21 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="row my-4">
-                <div class="col-md-6">
-                    <div>
-                        <a href="./../index.html" class="btn btn-outline-primary btn-block">
-                            <i class="fas fa-arrow-left"></i> Continue Shopping
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 d-flex justify-content-end">
-                    <div class="d-flex">
-                        <h4>Total</h4>
-                        <h4 class="ms-4">Ksh <span id="checkout-total"></span></h4>
-                    </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-6">
+                <div>
+                    <a href="./../index.html" class="btn btn-outline-primary btn-block">
+                        <i class="fas fa-arrow-left"></i> Continue Shopping
+                    </a>
                 </div>
             </div>
-
+            <div class="col-md-6 d-flex justify-content-end">
+                <div class="d-flex">
+                    <h4>Total</h4>
+                    <h4 class="ms-4">Ksh <span id="checkout-total"></span></h4>
+                </div>
+            </div>
         </div>
         <div class="my-3">
             <button class="btn btn-lg px-5 py-3 btn-outline-danger shadow-none" onclick="return clearCart()">
